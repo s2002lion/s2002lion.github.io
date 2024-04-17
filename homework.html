@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      h1 {
+        color: #d32f2f;
+        text-align: center;
+      }
+      p {
+        text-align: justify;
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+
+    <style>
+      /* 좌우로 나누는 스타일 */
+      .container {
+        display: flex; /* Flexbox 사용 */
+        justify-content: space-between; /* 주제를 좌우로 분산 배치 */
+      }
+      .topic {
+        width: 48%; /* 각 주제의 너비 설정 */
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-sizing: border-box; /* 패딩, 테두리를 포함한 크기 지정 */
+      }
+    </style>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      h1 {
+        color: #d32f2f;
+        text-align: center;
+      }
+      p {
+        text-align: justify;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container wrapper">
+      <div id="top">
+        <h1>제 홈페이지에 오신 것을 환영합니다!-20211230 신경환</h1>
+        <p>Use the menu to select different Stylesheets</p>
+      </div>
+      <div class="wrapper">
+        <div id="menubar">
+          <ul id="menulist">
+            <li class="menuitem" onclick="reStyle(0)">Stylesheet 1</li>
+            <li class="menuitem" onclick="reStyle(1)">Stylesheet 2</li>
+            <li class="menuitem" onclick="reStyle(2)">Stylesheet 3</li>
+            <li class="menuitem" onclick="reStyle(3)">Stylesheet 4</li>
+            <li class="menuitem" onclick="noStyles()">No Stylesheet</li>
+          </ul>
+        </div>
+        <div id="main">
+          <h1>Same Page Different Stylesheets</h1>
+          <p>
+            This is a demonstration of how different stylesheets can change the
+            layout of your HTML page. You can change the layout of this page by
+            selecting different stylesheets in the menu, or by selecting one of
+            the following links:<br />
+            <a href="#" onclick="reStyle(0);return false">Stylesheet1</a>,
+            <a href="#" onclick="reStyle(1);return false">Stylesheet2</a>,
+            <a href="#" onclick="reStyle(2);return false">Stylesheet3</a>,
+            <a href="#" onclick="reStyle(3);return false">Stylesheet4</a>.
+          </p>
+          <h2>No Styles</h2>
+          <p>
+            This page uses DIV elements to group different sections of the HTML
+            page. Click here to see how the page looks like with no
+            stylesheet:<br /><a href="#" onclick="noStyles();return false"
+              >No Stylesheet</a
+            >.
+          </p>
+        </div>
+        <div id="sidebar">
+          <h3>Side-Bar</h3>
+          <p></p>
+        </div>
+      </div>
+
+      <div id="bottom"></div>
+    </div>
+
+    <script>
+      function noStyles() {
+        document.styleSheets[0].disabled = true;
+        document.styleSheets[1].disabled = true;
+        document.styleSheets[2].disabled = true;
+        document.styleSheets[3].disabled = true;
+      }
+
+      function reStyle(n) {
+        noStyles();
+        document.styleSheets[n].disabled = false;
+        if (n === 0) {
+          // Stylesheet 1을 선택한 경우
+          var newContent = `
+      <h1>국밥: 대한민국의 고유한 식문화</h1>
+      <p>
+        국밥은 국물에 밥알을 말아 먹는 전세계에서 유례를 찾을 수 없는 대한민국만의
+        식습관, 식문화이자 음식의 분류이다. 대한민국을 대표하는 국민 음식을 꼽았을
+        때 국밥이 있다고 말할 수 있을 정도로 국내 음식을 대표하며 그 역사도 매우
+        깊다.
+      </p>
+      <p>
+        국물에 밥알을 말아 먹는 관습과 식습관은 대한민국의 국밥 문화를 제외하고는
+        전 세계에서 유례가 없다시피 하는데, 이런 대한민국만의 고유한 식습관이자
+        식문화인 국밥의 범위와 응용성은 매우 무궁무진하다. 순대국에 말아먹으면
+        순대국밥, 콩나물국에 말아먹으면 콩나물국밥, 소고기국에 말아먹으면
+        소고기국밥이 되는 식이다. 특히 경상도 고향 지방의 돼지국밥은 향토적인
+        특성이 더해져 더욱 그 특징이 강하다.
+      </p>
+      <p>
+        <a href="https://namu.wiki/w/%EA%B5%AD%EB%B0%A5" target="_blank"
+          >더 알아보기: 국밥 - 나무위키</a
+        >
+      </p>
+    `;
+          document.getElementById('main').innerHTML = newContent;
+        }
+        if (n === 1) {
+          // Stylesheet 2를 선택한 경우
+          var newContent = `
+    <h2>나라, 수도, 인구</h2>
+
+<table>
+  <tr>
+    <th>나라</th>
+    <th>수도</th>
+    <th>인구</th>
+  </tr>
+  <tr>
+    <td>대한민국</td>
+    <td>서울</td>
+    <td>5000만</td>
+  </tr>
+  <tr>
+    <td>일본</td>
+    <td>도쿄</td>
+    <td>1억 2400만</td>
+  </tr>
+  <tr>
+    <td>중국</td>
+    <td>베이징</td>
+    <td>14억 1000만</td>
+  </tr>
+  <tr>
+    <td>베트남</td>
+    <td>하노이</td>
+    <td>1억</td>
+  </tr>
+  <tr>
+    <td>미국</td>
+    <td>워싱턴 D.C</td>
+    <td>3억</td>
+  </tr>
+</table>
+    `;
+          document.getElementById('main').innerHTML = newContent;
+        }
+        if (n === 2) {
+          // Stylesheet 3을 선택한 경우
+          var newContent = `
+          <div class="container">
+      <div class="topic">
+        <h2>바르셀로나</h2>
+        <p>
+          FC 바르셀로나는 스페인 라리가의 프로 축구 클럽이다. 연고지는 스페인
+          카탈루냐 지방의 바르셀로나. 홈 구장은 세계에서 가장 큰 축구 전용
+          경기장으로 유명한 스포티파이 캄 노우이다. 스페인 및 클럽 축구를
+          대표하는 유럽의 초명문 구단이다. 유럽 축구 역사상 최초로 6관왕과 2회의
+          트레블을 달성한 클럽이다.[17] 라리가 초대 우승을 차지한 이래 2번째로
+          많은 라리가 우승을 기록했고[18], 코파 델 레이, 수페르코파 데 에스파냐,
+          UEFA 슈퍼컵 최다 우승 팀이다. 1928년 라리가 출범 이래 단 한 번도
+          강등되지 않고 스페인 최상위 리그에서 뛰고 있는 단 3팀[19] 중 하나이다.
+          약칭은 '바르사(Barça)'. 그러나 한국에서는 유독 '바르샤'라고 부르는데
+          아무래도 발음 편의상 그런 것으로 보인다.[20] 현지 축구경기를 보면
+          팬들이 “바(르-거의 묵음에 가깝게 들린다)샤!”처럼 부른다고 하는 사람도
+          있으나, forvo같은 사이트를 보면 "바르사"라고 하는 현지인의 발음을
+          확인할 수 있다.
+        </p>
+      </div>
+      <div class="topic">
+        <h2>레알마드리드</h2>
+        <p>
+          알 마드리드 CF는 스페인 마드리드 차마르틴을 연고로 하는 프로
+          축구단이다. 소속 리그는 라리가, 홈구장은 에스타디오 산티아고
+          베르나베우이다.[14] 유러피언컵 5연패와 UEFA 챔피언스 리그 3연패를
+          달성한 유일한 팀이다. 또한 UEFA 챔피언스 리그, 라리가라는 주요
+          대회[15] 최다 우승 기록을 가지고 있는 스페인을 대표하는 유럽의 초명문
+          구단이다. 다른 기록으로는 역대 라리가 누적 승점 1위, 역대 UEFA
+          챔피언스 리그 누적 승점 1위, UEFA 계수 랭킹 최다 1위, 라리가 한 시즌
+          역대 최다 승점[16], 유럽 4대 리그 최다 연속 홈 무패[17] 등이 있다.
+          1929년 라리가가 창설된 이후 단 한 번도 1부 리그에서 강등당하지
+          않았고,[18] 스페인에서 아틀레틱 클루브와 유이하게 무패 우승을 달성한
+          바 있다. 유럽의 220개 축구 클럽을 대변하는 유럽 클럽 협회의 창립 회원
+          열여섯 클럽 중 하나이며[19], 구단의 규모와 인기에 따른 경제적 가치를
+          인정받아 미국의 경제 잡지 포브스가 선정하는 세계에서 가장 가치 있는
+          스포츠 구단 순위에서도 항상 순위권을 기록하고 있다. 특히
+          2013~2015년에는 뉴욕 양키스, 댈러스 카우보이스, FC 바르셀로나 등 각
+          종목별 세계 최고의 팀들을 제치고 3년 연속 1위를 달성했고, 이후 2016년
+          2위, 2017년 5위, 2018년 3위, 2019년 3위, 2020년 6위에 오르며 가치가
+          높은 구단으로 평가받고 있다.[20]
+        </p>
+      </div>
+    </div>
+    `;
+          document.getElementById('main').innerHTML = newContent;
+        }
+        if (n === 3) {
+          // Stylesheet 4을 선택한 경우
+          var newContent = `
+          <h1>동서대학교 - DONGSEO UNIVERSITY (DSU)</h1>
+    <p>
+      부산광역시 사상구 주례동에 소재한 4년제 사립대학교. 1970년 설립된 학교법인
+      동서학원 산하 동서공과대학으로 1992년 개교한 이후 1996년 지금의 교명으로
+      변경됨과 동시에 현재는 7개 대학, 3개 계열, 2개 학부 규모의 종합대학으로
+      성장하였다. 2022년 개교 30주년을 맞이했다. 총 78개의 학과, 32개의
+      인문사회, 7개의 자연과학, 22개의 예체능, 17개의 공학계열 학과가 운영
+      중이다.
+    </p>
+    <img src="동서대학교１.png" alt="동서대학교1" />
+    `;
+          document.getElementById('main').innerHTML = newContent;
+        }
+      }
+
+      function closeBlackdiv() {
+        var blackdiv, stylediv;
+        blackdiv = document.getElementById('blackdiv');
+        blackdiv.parentNode.removeChild(blackdiv);
+        stylediv = document.getElementById('stylediv');
+        stylediv.parentNode.removeChild(stylediv);
+      }
+
+      function showStyle(n) {
+        var div, text, blackdiv;
+        blackdiv = document.createElement('DIV');
+        blackdiv.setAttribute(
+          'style',
+          'background-color:#000000;position:absolute;width:100%;height:100%;top:0;opacity:0.5;margin-left:-20px;'
+        );
+        blackdiv.setAttribute('id', 'blackdiv');
+        blackdiv.setAttribute('onclick', 'closeBlackdiv()');
+        document.body.appendChild(blackdiv);
+        div = document.createElement('DIV');
+        div.setAttribute('id', 'stylediv');
+        div.setAttribute(
+          'style',
+          'background-color:#ffffff;padding-left:5px;position:absolute;width:auto;height:auto;top:100px;bottom:50px;left:200px;right:200px;overflow:auto;font-family: monospace; white-space: pre;line-height:16px;'
+        );
+        text = document.createTextNode(
+          document.getElementsByTagName('STYLE')[n].innerHTML
+        );
+        div.appendChild(text);
+        document.body.appendChild(div);
+        //alert(document.getElementsByTagName("STYLE")[n].innerHTML);
+      }
+      reStyle(0);
+    </script>
+  </body>
+</html>
