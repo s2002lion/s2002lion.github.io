@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+      }
+      .display-date {
+        margin-bottom: 20px;
+      }
+      .calculator {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display-date" id="dateTime"></div>
+      <div class="calculator" id="amusementParkCalculator">
+        <h2>놀이공원 입장료 계산기</h2>
+        <label for="age">나이 입력: </label>
+        <input type="number" id="age" min="0" />
+        <button onclick="calculateEntranceFee()">입장료 계산</button>
+        <p id="feeResult"></p>
+      </div>
+      <div class="calculator" id="cafeMenuCalculator">
+        <h2>카페 메뉴 계산기</h2>
+        <label for="coffee">커피 (5,000원 개): </label>
+        <input type="number" id="coffee" min="0" value="0" /><br />
+        <label for="tea">차 (3,000원 개): </label>
+        <input type="number" id="tea" min="0" value="0" /><br />
+        <label for="sandwich">샌드위치 (7,000원 개): </label>
+        <input type="number" id="sandwich" min="0" value="0" /><br />
+        <button onclick="calculateTotal()">총액 계산</button>
+        <p id="totalResult"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
